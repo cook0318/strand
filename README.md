@@ -7,23 +7,23 @@ This libary contains functions to generate random strings, sentences, and paragr
 ##### Importing
 I'm not 100% sure how to make my Library easily installable. The best way I can think of is as follows:
 
-*Find where your Python Libraries folder is. If you don't know where it is, the easiest way to find it is:
+* Find where your Python Libraries folder is. If you don't know where it is, the easiest way to find it is:
     
-    *Run Python either from your CMD line or directly the Python program.
+    * Run Python either from your CMD line or directly the Python program.
     
-    *Import a package you know you have. For me, I use "import random", because this library uses it anyway.
+    * Import a package you know you have. For me, I use "import random", because this library uses it anyway.
     
-    *After importing, type "package.__file__" where pacakge is the package you imported. That's the package name,
+    * After importing, type "package.__file__" where pacakge is the package you imported. That's the package name,
     a period, two underscores, the word file, and two more underscores.
     
-    *Go to the folder where the package file is located. In my case, its "C:\\Users...Programs\\Python\\Python37-32\\lib\\random.py",
+    * Go to the folder where the package file is located. In my case, its "C:\\Users...Programs\\Python\\Python37-32\\lib\\random.py",
     so we will be doing the rest of the steps in the /lib folder.
 
-*Create a new file called strand.py
+* Create a new file called strand.py
 
-*[Open the raw code](https://raw.githubusercontent.com/cook0318/strand/master/library/strand.py), copy it and save the file.
+* [Open the raw code](https://raw.githubusercontent.com/cook0318/strand/master/library/strand.py), copy it and save the file.
 
-*You should now be able to write `import strand` in any Python file on your machine and have access to the library.
+* You should now be able to write `import strand` in any Python file on your machine and have access to the library.
 
 Note that any time there is an update, you will have to open the raw code and repeat the steps again, replacing it in your directory. If anyone has an easier way to do this, please let me know.
 
