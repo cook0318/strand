@@ -7,6 +7,8 @@ This libary contains functions to generate random strings, sentences, and paragr
 ##### Importing
 import *strand*
 
+**Link Here**
+
 ##### Getting single values
 If you want a single character, simply put use a minWordLength and maxWordLength of 1 and a single character will be generated. By setting three of the character types to False and keeping one as True, you can specifically generate a lowercase letter, symbol, etc.
 
@@ -61,9 +63,8 @@ Symbols includes any of the following characters: !@#$%^&*()~`,./<>?;:'"[]{}-=_+
 
 
 ### To Do:
+-Code should ordered the same format for every method.
 
--Validation for if user enters a min number larger than a max value
+-User cannot pass Bool values if no min/max values have been written. Maybe possible to take generic inputs (a,b,c,d,e,f) and convert them? IE, if a is found to be a Bool value, we know it is for lowercase, etc.
 
--What happens if a user enters all bool parameters as false?
-
--What happens when lowercase is set to false?
+-Could eventually put validation into own function.

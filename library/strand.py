@@ -1,6 +1,29 @@
 import random
+class WrongOrderException(Exception):
+    pass
+
+class NoTrueCharacterSetsException(Exception):
+    pass
+
+class ImproperParameterType(Exception):
+    pass
 
 def getString(minWordLength=3, maxWordLength=10, lowercase=True, uppercase=False, symbols=False, numbers=False):
+    # Validate inputs: lengnths must be ints, min must be larger than max, character sets must be boolean, and atleast one set of characters must be set to true.
+    try: 
+        test = 1 + minWordLength
+        test = 1 + maxWordLength
+    except:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(minWordLength) == bool or type(maxWordLength) == bool:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(lowercase) != bool or type(uppercase) != bool or type(symbols) != bool or type(numbers) != bool:
+        raise ImproperParameterType("Character set parameters must be True or False.")
+    if maxWordLength < minWordLength:
+        raise WrongOrderException("Minimum value must be smaller or equal to Maximum value.")
+    if lowercase==False and uppercase==False and symbols==False and numbers==False:
+        raise NoTrueCharacterSetsException("You must set at least one character set to true. Default values are: lowercase=True, uppercase=False, symbols=False, numbers=False.")
+
     # Define characters.
     lowercaseString = "abcdefghijklmnopqrstuvwxyz"
     uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -37,6 +60,23 @@ def getString(minWordLength=3, maxWordLength=10, lowercase=True, uppercase=False
 
 
 def getSentence(minWords=3, maxWords=10, minWordLength=3, maxWordLength=10, lowercase=True, uppercase=False, symbols=False, numbers=False):
+    # Validate inputs: lengnths must be ints, min must be larger than max, character sets must be boolean, and atleast one set of characters must be set to true.
+    try: 
+        test = 1 + minWordLength
+        test = 1 + maxWordLength
+        test = 1 + minWords
+        test = 1 + maxWords
+    except:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(minWords) == bool or type(maxWords) == bool or type(minWordLength) == bool or type(maxWordLength) == bool:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(lowercase) != bool or type(uppercase) != bool or type(symbols) != bool or type(numbers) != bool:
+        raise ImproperParameterType("Character set parameters must be True or False.")
+    if maxWordLength < minWordLength:
+        raise WrongOrderException("Minimum value must be smaller or equal to Maximum value.")
+    if lowercase==False and uppercase==False and symbols==False and numbers==False:
+        raise NoTrueCharacterSetsException("You must set at least one character set to true. Default values are: lowercase=True, uppercase=False, symbols=False, numbers=False.")
+
     # Get a random number of words to make between users parameters, using random.randint.
     numWords = random.randint(minWords, maxWords)
     listOfStrings = []
@@ -75,6 +115,32 @@ def getSentence(minWords=3, maxWords=10, minWordLength=3, maxWordLength=10, lowe
 
 
 def getParagraph(minSentences=3, maxSentences=10, minWords=3, maxWords=10, minWordLength=3, maxWordLength=10, lowercase=True, uppercase=False, symbols=False, numbers=False):
+    # Validate inputs: lengnths must be ints, min must be larger than max, character sets must be boolean, and atleast one set of characters must be set to true.
+    try: 
+        test = 1 + minWordLength
+        test = 1 + maxWordLength
+        test = 1 + minWords
+        test = 1 + maxWords
+        test = 1 + minSentences
+        test = 1 + maxSentences
+    except:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(minSentences) == bool or type(maxSentences) == bool or type(minWords) == bool or type(maxWords) == bool or type(minWordLength) == bool or type(maxWordLength) == bool:
+        raise ImproperParameterType("Lengths and Counts must by Integers.")
+    if type(lowercase) != bool or type(uppercase) != bool or type(symbols) != bool or type(numbers) != bool:
+        raise ImproperParameterType("Character set parameters must be True or False.")
+    if maxWordLength < minWordLength:
+        raise WrongOrderException("Minimum value must be smaller or equal to Maximum value.")
+    if lowercase==False and uppercase==False and symbols==False and numbers==False:
+        raise NoTrueCharacterSetsException("You must set at least one character set to true. Default values are: lowercase=True, uppercase=False, symbols=False, numbers=False.")
+    
+    # Validate inputs: min must be larger than max, and atleast one set of characters must be set to true.
+    if maxWordLength < minWordLength or maxWords < minWords or maxSentences < minSentences:
+        raise WrongOrderException("Minimum value must be smaller or equal to Maximum value.")
+
+    if lowercase==False and uppercase==False and symbols==False and numbers==False:
+        raise NoTrueCharacterSetsException("You must set at least one character set to true. Default values are: lowercase=True, uppercase=False, symbols=False, numbers=False.")
+    
     # Randomly chose the number of sentences between the users parameters using random.randint.
     numSentences = random.randint(minSentences,maxSentences)
 
