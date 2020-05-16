@@ -11,12 +11,12 @@ I'm not 100% sure how to make my Library easily installable. The best way I can 
     
     * Run Python either from your CMD line or directly the Python program.
     
-    * Import a package you know you have. For me, I use "import random", because this library uses it anyway.
+    * Import a package you know you have. I usually use "import random", because this library uses it anyway.
     
-    * After importing, type "package.__file__" where pacakge is the package you imported. That's the package name,
-    a period, two underscores, the word file, and two more underscores.
+    * After importing, type "`package.__file__`" where package is the package you imported. That's the package name,
+    a period, two underscores, the word file, and two more underscores. In my case, I would write `random.__file__`.
     
-    * Go to the folder where the package file is located. In my case, its "C:\\Users...Programs\\Python\\Python37-32\\lib\\random.py",
+    * Go to the folder where the package file is located. In my case, its "C:\\Users\\xxx\\xxx\\xxx\\Programs\\Python\\Python37-32\\lib\\random.py",
     so we will be doing the rest of the steps in the /lib folder.
 
 * Create a new file called strand.py
